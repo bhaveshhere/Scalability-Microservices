@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: follow-service
+spec:
+  replicas: 2  # Number of replicas for redundancy
+  selector:
+    matchLabels:
+      app: follow-service
+  template:
+    metadata:
+      labels:
+        app: follow-service
+    spec:
+      containers:
+      - name: follow-service
+        image: bhavesh9876/follow-service:latest  # Replace with your Docker image for follow-service
+        ports:
+        - containerPort: 8002  # Expose FastAPI app on port 8002 (change as needed)
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: follow-service
+spec:
+  type: NodePort  # Expose the service externally via NodePort
+  ports:
+  - port: 8002       # Port inside the Kubernetes cluster
+    targetPort: 8002  # Target port of the container (FastAPI app)
+    nodePort: 30004   # External port on the host machine (NodePort, should be unique)
+  selector:
+    app: follow-service
