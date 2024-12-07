@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Microservices Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Microservices Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="#user-service">User Service</a></li>
+                    <li><a href="#post-service">Post Service</a></li>
+                    <li><a href="#follow-service">Follow Service</a></li>
+                    <li><a href="#notification-service">Notification Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- User Service Card -->
+        <div class="service-card" id="user-service">
+            <h2>User Service</h2>
+            <p>Status: <span class="status">Running</span></p>
+            <button onclick="window.location='user-service.html'">Go to User Service</button>
+        </div>
+        
+        <!-- Post Service Card -->
+        <div class="service-card" id="post-service">
+            <h2>Post Service</h2>
+            <p>Status: <span class="status">Running</span></p>
+            <button onclick="window.location='http://localhost:8001';">Go to Post Service</button>
+        </div>
+        
+        <!-- Follow Service Card -->
+        <div class="service-card" id="follow-service">
+            <h2>Follow Service</h2>
+            <p>Status: <span class="status">Running</span></p>
+            <!-- Change to go to follow.html -->
+            <button onclick="window.location='follow-service.html';">Go to Follow Service</button>
+        </div>
+        
+        <!-- Notification Service Card -->
+        <div class="service-card" id="notification-service">
+            <h2>Notification Service</h2>
+            <p>Status: <span class="status">Running</span></p>
+            <button onclick="window.location='http://localhost:8004';">Go to Notification Service</button>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Microservices Dashboard. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
